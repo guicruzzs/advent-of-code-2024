@@ -35,7 +35,6 @@ end
 safe_reports = 0
 File.open('input.txt').each do |line|
   report = line.split(" ").map(&:to_i)
-
   safe_reports += is_there_a_safe_report?(report) ? 1 : 0
 end
 

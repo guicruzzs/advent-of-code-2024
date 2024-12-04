@@ -16,10 +16,7 @@ def is_a_safe_report?(report)
       end
     end
 
-    if (level - previous_level) * direction <= 0 || (level - previous_level) * direction > 3
-      return false
-    end
-
+    return false if (level - previous_level) * direction <= 0 || (level - previous_level) * direction > 3
   end
 
   true
@@ -28,7 +25,6 @@ end
 safe_reports = 0
 File.open('input.txt').each do |line|
   report = line.split(" ").map(&:to_i)
-
   safe_reports += is_a_safe_report?(report) ? 1 : 0
 end
 
